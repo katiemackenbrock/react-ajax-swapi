@@ -12,8 +12,9 @@ In this deliverable, you'll consume the [Star Wars API](https://swapi.dev/) and 
 
 To get set up:
 
-- Use `create-react-app` to create a React app named `react-star-wars`
-- `cd` into `react-star-wars` and open VS Code.
+- Fork and clone this repo
+- Use `npx create-react-app .` to create a React app inside the current directory
+- Open VS Code.
 - Open a terminal in VS Code.
 - Start the React Dev Server.
 
@@ -40,7 +41,7 @@ To get set up:
 	1. A nice approach is to use a slightly more complex syntax that React Router's `<Link>` offers.  This approach relies on assigning an object instead of a string to its `to` prop.  That object passed can have a `state` property that allows information to be passed to the new route. For example:
 	
 ```js
-this.state.starships.map(starship =>
+starships.map(starship =>
   <Link
     to={{
       pathname: '/starship',
