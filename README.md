@@ -1,86 +1,70 @@
-<img src="https://i.imgur.com/go18uJE.jpg">
+# Getting Started with Create React App
 
-# Star Wars API - React AJAX practice
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## Intro
+In the project directory, you can run:
 
-In this deliverable, you'll consume the [Star Wars API](https://swapi.dev/) and render it's data.
+### `npm start`
 
-## Set Up
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-To get set up:
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- Fork and clone this repo
-- Use `npx create-react-app .` to create a React app inside the current directory
-- Open VS Code.
-- Open a terminal in VS Code.
-- Start the React Dev Server.
+### `npm test`
 
-## Exercises
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-> Styling is secondary to completing the functionality
+### `npm run build`
 
-1. Obtain all of the starships from the API and render in `<App>` a clickable `<Link>` (imported from `react-router-dom`) for each starship. The link should be styled to look like a button and contain the text of the starship's name.  For example:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-	<img src="https://i.imgur.com/VERV0nk.png">
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-2. When a starship `<Link>` is clicked a `<StarshipPage>` component should be rendered that displays the starship's `name`, `model` and a "Return to Starship List" `<Link>` that routes back to the root route that renders `<App>`. For example:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-	<img src="https://i.imgur.com/IjRwsHk.png">
+### `npm run eject`
 
-5. Because the data is being loaded asynchronously, there are times, such as if the user refreshes the page while viewing the `<StarshipPage>`, that the data won't be available to render, in this case, display a "Loading..." message instead.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## Hints
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Hold the starships in state.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- The challenge is to be able to have the `<StarshipPage>` component obtain the specific starship object it needs to render. Here are a few of approaches:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-	1. A nice approach is to use a slightly more complex syntax that React Router's `<Link>` offers.  This approach relies on assigning an object instead of a string to its `to` prop.  That object passed can have a `state` property that allows information to be passed to the new route. For example:
-	
-```js
-starships.map(starship =>
-  <Link
-    to={{
-      pathname: '/starship',
-      state: starship
-    }}
-    key={starship.name}
-  >
-    {{starship.name}}
-  </Link>
-```
+## Learn More
 
-And ***inside your switch statement*** you'll write your `Route` like so:
-```js
-            <Route path='/starship' render={({location}) => 
-              <StarshipPage location={location}/>
-            }/>
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-You'll then be able to access the passed state on the route's `location` object...
-		
-```js
-	props.location.state.starship
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Be sure the `<Route>` component that is rendering `<StarshipPage>` passes the `location` object to it.
+### Code Splitting
 
-2. Another approach would be to pass to `<StarshipPage>` a method as a prop that it can call, supplying an argument identifying which starship object it wants. That argument's value could come from a URL parameter in the link that was clicked...
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Review the Client-side Routing in React lesson's _Defining Routes with URL Parameters_ section for assistance with how to define routes with parameters used to pass information to components.
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Bonus
+### Making a Progressive Web App
 
-- Enhance the `<StarshipPage>` component to render a `<PilotList>` component that lists the names of the pilots for that starship.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- If the starship has no pilots, display a "No Pilots" message.
+### Advanced Configuration
 
-	Hint: This requires a call to the API for each of the endpoints listed in the starship's `pilots` array. Using `async`/`await` can help with this - [here's a repl](https://repl.it/@jim_clark/Multiple-AJAX-Calls) that shows how to fetch the pilots in parallel.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
----
+### Deployment
 
-Adapted from [SEI-DT-71 lab](https://git.generalassemb.ly/SEI/dt-71/blob/master/units/4_mern_stack/w11/d3/03-react-ajax-lab/react-ajax-lab.md)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
