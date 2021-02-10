@@ -63,7 +63,7 @@ And ***inside your switch statement*** you'll write your `Route` like so:
 You'll then be able to access the passed state on the route's `location` object...
 		
 ```js
-	this.props.location.state.starship
+	props.location.state.starship
 ```
 
 Be sure the `<Route>` component that is rendering `<StarshipPage>` passes the `location` object to it.
